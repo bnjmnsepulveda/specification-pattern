@@ -1,0 +1,47 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+
+.mvn/
+mvnw
+mvnw.cmd
+
+### app files ###
+run.bat
+run.sh
+run-dev.sh
+run-local.sh
+run-docker.sh
+run-prod.sh
+.env
+liquibase.properties
+postgresql-42.2.12.jar
+run-liquibase.sh
