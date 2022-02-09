@@ -1,4 +1,4 @@
-package com.benjamin.pattern.specification.model;
+package com.benjamin.pattern.example.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.ToString;
 @ToString
 @Builder
 @AllArgsConstructor
-public class Store {
+public class Department {
     private Integer id;
-    private String name;
+    private String description;
 }

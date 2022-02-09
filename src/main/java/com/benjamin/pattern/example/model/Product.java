@@ -1,7 +1,5 @@
-package com.benjamin.pattern.specification.model.product;
+package com.benjamin.pattern.example.model;
 
-import com.benjamin.pattern.specification.model.Department;
-import com.benjamin.pattern.specification.model.Store;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;

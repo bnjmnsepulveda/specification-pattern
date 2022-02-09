@@ -1,9 +1,9 @@
 package com.benjamin.pattern.specification;
 
 import com.benjamin.pattern.specification.core.ICompositeISpecification;
-import com.benjamin.pattern.specification.model.product.ByDepartmentSpecification;
-import com.benjamin.pattern.specification.model.product.BySkuSpecification;
-import com.benjamin.pattern.specification.model.product.Product;
+import com.benjamin.pattern.example.specification.ByDepartmentSpecification;
+import com.benjamin.pattern.example.specification.BySkuSpecification;
+import com.benjamin.pattern.example.model.Product;
 
 import java.util.Arrays;
 
