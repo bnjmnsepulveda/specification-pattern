@@ -8,6 +8,10 @@ public class ByDepartmentSpecification extends CompositeSpecification<Product> {
 
     private Department department;
 
+    public ByDepartmentSpecification(Department department) {
+        this.department = department;
+    }
+
     @Override
     public boolean isSatisfiedBy(Product candidate) {
         return candidate

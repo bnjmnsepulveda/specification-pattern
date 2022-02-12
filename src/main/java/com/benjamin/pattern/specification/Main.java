@@ -1,43 +1,34 @@
 package com.benjamin.pattern.specification;
 
+import com.benjamin.pattern.example.model.Department;
+import com.benjamin.pattern.example.model.Product;
+import com.benjamin.pattern.example.service.ProductService;
+import com.benjamin.pattern.objectmother.ProductObjectMother;
 import com.benjamin.pattern.specification.core.ICompositeISpecification;
 import com.benjamin.pattern.example.specification.ByDepartmentSpecification;
 import com.benjamin.pattern.example.specification.BySkuSpecification;
-import com.benjamin.pattern.example.model.Product;
 
 import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
+
         System.out.println("patterns example");
 
         var products = Arrays.asList(
-                Product.builder()
-                        .sku(1111)
-                        .description("Guitar")
-                        .department(10)
-                        .price(1000.0)
-                        .build(),
-                Product.builder()
-                        .sku(1111)
-                        .department(100)
-                        .description("Bass")
-                        .price(1500.0)
-                        .build(),
-                Product.builder()
-                        .sku(2222)
-                        .description("guitar string")
-                        .department(10)
-                        .price(10.0)
-                        .build()
+            ProductObjectMother.withSku(1111),
+            ProductObjectMother.withSku(2222)
         );
-        ICompositeISpecification spec = new ByDepartmentSpecification(100)
+        var productsService = new ProductService(products);
+
+
+        ICompositeISpecification<Product> spec = new ByDepartmentSpecification(new Department(1,"clothing"))
                 .and(new BySkuSpecification(11118)).not();
 
-        products.stream()
-                .filter(p -> spec.isSatisfiedBy(p))
-                .forEach(p -> System.out.println(p));
+       productsService
+               .findSatisfiedBy(spec)
+               .forEach(System.out::println);
 
 
 

@@ -15,7 +15,6 @@ public class Product {
     private Department department;
     private Double price;
     private String category;
-    private String[] labels;
     private Integer stock;
     private List<Store> availableStores;
 

@@ -12,6 +12,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.source>11</jdk.source>
         <jdk.target>11</jdk.target>
+        <!-- Dependency versions -->
+        <junit.jupiter.version>5.5.2</junit.jupiter.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+
     </properties>
 
     <dependencies>
@@ -24,16 +28,11 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.8.2</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.8.2</version>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -46,6 +45,11 @@
                 <configuration>
                     <mainClass>com.benjamin.pattern.specification.Main</mainClass>
                 </configuration>
+            </plugin>
+            <!-- unit test -->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
             </plugin>
             <!-- sdk -->
             <plugin>
